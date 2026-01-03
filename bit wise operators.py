@@ -1,4 +1,4 @@
 a=26
 b=23
-variable=a&b
+variable = a & b
 print(variable)
