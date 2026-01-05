@@ -17,8 +17,12 @@ while  not game_over :
         letter = word[position]
         if guess == word:
             display[position] = letter      
-    if guess_letter not in word:
+    if guess not in word:
         lives -=1
-        
-
+        if lives == 0:
+            game_over == True
+            print("you lose")
+    if '_' not in display:
+        game_over = True
+        print("you win")
 
