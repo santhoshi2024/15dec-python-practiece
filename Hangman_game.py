@@ -1,5 +1,7 @@
 import random
+print("WELCOME TO HANGMAN GAME")
 list = ["apple", "beautiful" , "cat", "domain", "elephant" , "fish","grapes"]
+
 word = random.choice(list)
 print(word)
 display = []
@@ -7,22 +9,24 @@ for letters in range(len(word)):
     display += "_"
 print(display)
 
-print("WELCOME TO HANGMAN GAME")
+
 lives = 6
 game_over = False
 while  not game_over :
-    guess = input("Guess a letter: ")
+    guess = input("Guess a letter: ").lower()
 
     for position in range(len(word)):
         letter = word[position]
-        if guess == word:
-            display[position] = letter      
+        if guess == letter:
+            display[position] = letter   
+            print(display)   
     if guess not in word:
         lives -=1
         if lives == 0:
             game_over == True
-            print("you lose")
+            print("**YOU LOSE**")
     if '_' not in display:
         game_over = True
-        print("you win")
+        print("**YOU WIN**\n WINNER WINNER CHICKEN DINNER")
+        
 
